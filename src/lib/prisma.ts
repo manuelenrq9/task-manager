@@ -1,9 +1,13 @@
-// src/lib/prisma.ts
 import { PrismaClient } from '@prisma/client'
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient }
 
-// En Prisma 7, el cliente ya sabe dónde está la DB por el prisma.config.ts
-export const prisma = globalForPrisma.prisma || new PrismaClient()
+// In the new version, we pass the URL directly to the constructor 
+// or let it pull from the config if the environment supports it.
+export const prisma = 
+  globalForPrisma.prisma || 
+  new PrismaClient({
+    datasourceUrl: process.env.DATABASE_URL || 'file:./prisma/dev.db'
+  })
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
