@@ -27,7 +27,7 @@ Sistema de gestión de tareas desarrollado como parte de una evaluación técnic
 1.  **Clonar el repositorio:**
 
     ```bash
-    git clone [https://github.com/TU_USUARIO/task-manager.git](https://github.com/TU_USUARIO/task-manager.git)
+    git clone https://github.com/manuelenrq9/task-manager.git
     cd task-manager
     ```
 
