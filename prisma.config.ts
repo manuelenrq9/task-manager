@@ -1,4 +1,4 @@
-import { defineConfig } from '@prisma/config'
+import { defineConfig } from 'prisma/config'
 
 export default defineConfig({
   // @ts-ignore - Temporary bypass if types are mismatched between CLI and Client

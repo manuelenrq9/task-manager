@@ -46,7 +46,7 @@ importers:
         specifier: 16.2.1
         version: 16.2.1(@typescript-eslint/parser@8.57.1(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
       prisma:
-        specifier: ^6.19.2
+        specifier: ^6.1.2
         version: 6.19.2(typescript@5.9.3)
       tailwindcss:
         specifier: ^4
