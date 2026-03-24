@@ -56,7 +56,7 @@ export default function NewTaskPage() {
         ← Volver al listado
       </Link>
       
-      <h1 className="text-2xl font-bold mb-6 text-gray-900">Crear Nueva Tarea</h1>
+      <h1 className="text-2xl font-bold mb-6 text-gray-500">Crear Nueva Tarea</h1>
 
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl border shadow-sm space-y-5">
         

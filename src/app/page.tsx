@@ -16,7 +16,7 @@ export default async function HomePage() {
     <div className="space-y-6">
       <div className="flex justify-between items-end">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Mis Tareas</h1>
+          <h1 className="text-3xl font-bold text-gray-500">Mis Tareas</h1>
           <p className="text-gray-500">Gestiona tus pendientes del día</p>
         </div>
         <span className="text-sm font-medium text-gray-400">
