@@ -37,13 +37,21 @@ Sistema de gestión de tareas desarrollado como parte de una evaluación técnic
     pnpm install
     ```
 
-3.  **Configurar Base de Datos:**
+3.  **Configurar variables de entorno:**
+
+    Crea un archivo `.env` en la raíz del proyecto y añade la siguiente línea para la base de datos SQLite:
+
+    ```env
+    DATABASE_URL="file:./dev.db"
+    ```
+
+4.  **Configurar Base de Datos:**
 
     ```bash
     pnpm prisma migrate dev --name init
     ```
 
-4.  **Correr en desarrollo:**
+5.  **Correr en desarrollo:**
     ```bash
     pnpm dev
     ```
