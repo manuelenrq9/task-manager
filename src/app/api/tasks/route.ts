@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-// --- GET: Listar todas las tareas (Requisito 3) ---
+//GET: Listar todas las tareas
 export async function GET() {
   try {
     const tasks = await prisma.task.findMany({
@@ -18,13 +18,13 @@ export async function GET() {
   }
 }
 
-// --- POST: Crear una nueva tarea (Requisito 3 + Validaciones) ---
+//POST: Crear una nueva tarea 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { title, description } = body;
 
-    // 1. Validación: No permitir valores vacíos (Requisito de evaluación)
+    // 1. Validación: No permitir valores vacíos
     if (!title || title.trim().length === 0) {
       return NextResponse.json(
         { error: "El título es obligatorio" },
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // 2. Validación: Mínimo de caracteres (Requisito de evaluación)
+    // 2. Validación: Mínimo de caracteres
     if (title.trim().length < 3) {
       return NextResponse.json(
         { error: "El título debe tener al menos 3 caracteres" },
@@ -40,8 +40,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // 3. Validación: Solo alfanuméricos, _ y - (REQUISITO CRÍTICO DEL EXAMEN)
-    // Regex: ^ (inicio), [a-zA-Z0-9_-] (permitidos), + (uno o más), $ (fin)
+    // 3. Validación: Solo alfanuméricos
     const regex = /^[a-zA-Z0-9_-]+$/;
     if (!regex.test(title)) {
       return NextResponse.json(
